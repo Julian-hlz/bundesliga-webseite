@@ -1,0 +1,275 @@
+:root {
+    --accent-color: #e30613;
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
+    --highlight-color: #007a33;
+    --background-color: #f0f0f0;
+    --link-color: #007a33;
+    --footer-background-color: #1a1a1a;
+    --footer-text-color: #ffffff;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Stellt sicher, dass der Header über anderen Elementen bleibt */
+    background-color: var(--primary-color); /* Beibehaltung der Hintergrundfarbe */
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 1em;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Schatten für bessere Sichtbarkeit */
+}
+
+header img {
+    border: 100px;
+    width: 150px;
+    height: 150px; 
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li:first-child {
+    margin-left: 20px; /* Erhöht den Abstand links vom ersten Listenelement */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #888;
+    font-size: 14px;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a.active {
+    color: #000;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+}
+
+.nav-links a:hover {
+    font-weight: bold; /* Macht den Text fett */
+    text-decoration: underline; /* Fügt eine Unterstreichung hinzu */
+    color: red; /* Optional: Ändert die Farbe des Textes beim Hover-Effekt */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.bundesliga-logo {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.dazn-logo {
+    height: 20px;
+    width: auto;
+    margin-left: 10px;
+    object-fit: contain;
+}
+
+.profile img {
+    height: 30px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+}
+
+a {
+    color: var(--link-color);
+}
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    height: 60px;
+}
+body.dark-mode {
+    --background-color: #1a1a1a; /* Hintergrundfarbe im Dunkelmodus */
+    --text-color: #ffffff; /* Textfarbe im Dunkelmodus */
+    --link-color: #1e90ff; /* Linkfarbe im Dunkelmodus */
+    --footer-background-color: #000000;
+    --footer-text-color: #888888;
+}
+
+body.dark-mode, 
+body.dark-mode p,
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4, 
+body.dark-mode h5, 
+body.dark-mode h6,
+body.dark-mode a {
+    color: var(--text-color);
+}
+
+body.dark-mode header {
+    background-color: #333333; /* Dunkler Hintergrund für die Navigationsleiste */
+    color: #ffffff; /* Weiße Schriftfarbe */
+}
+
+body.dark-mode .nav-links a {
+    color: #ffffff; /* Links in der Navigationsleiste auf Weiß setzen */
+}
+
+body.dark-mode .nav-links a:hover {
+    color: #ffcc00; /* Links beim Hover-Effekt auf eine gut lesbare Farbe ändern, z.B. Gelb */
+}
+
+body.dark-mode .logo span {
+    color: #ffcc00; /* Farbe des Textes "OFFIZIELLE WEBSITE ZUR VERFÜGUNG GESTELLT VON" auf Gelb ändern */
+}
+
+body.dark-mode .box-title {
+    color: #ffffff; /* Setzt die Schriftfarbe in den Boxen auf Weiß im Dark Mode */
+}
+
+body.dark-mode .scroll-box {
+    background-color: #333333; /* Passt die Hintergrundfarbe der Boxen im Dark Mode an */
+    border-color: #555555; /* Ändert die Rahmenfarbe der Boxen im Dark Mode */
+}
+
+body.dark-mode .partners-section {
+    background-color: #333333; /* Hintergrund der Partnerlogos im Dark Mode */
+    color: #ffffff; /* Schriftfarbe im Dark Mode */
+}
+
+body.dark-mode .partners-logos img {
+    filter: brightness(0.8); /* Verdunkelt die Logos im Dark Mode */
+}
+
+body.dark-mode .partners-section h2 {
+    color: #ffffff; /* Schriftfarbe der Überschrift im Dark Mode */
+}
+
+main {
+    padding-top: 60px; /* Platz für den fixierten Header schaffen, abhängig von der Höhe des Headers */
+    margin-bottom: 80px; /* Abstand nach unten zum Footer */
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    height: 60px;
+}
+
+.profile a {
+    text-decoration: none;
+}
+
+main { 
+    display: grid; 
+    grid-template-columns: auto;
+}
+
+footer {
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
+    padding: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-section h3,
+.footer-section h4,
+.footer-section p {
+    margin: 0;
+    padding: 0;
+    color: var(--footer-text-color);
+}
+
+.footer-section .apps img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.footer-section .partners img {
+    height: 30px;
+    margin-right: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #888;
+}
+
+.footer-links li {
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.social-media a {
+    color: #888;
+    margin-right: 10px;
+}
+
+.footer-settings {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.footer-settings select {
+    background-color: #333333;
+    color: #888;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.display-mode-label {
+    margin-bottom: 5px;
+    color: #888;
+    font-size: 14px;
+}
+
+.footer-copyright {
+    text-align: center;
+    margin-top: 20px;
+    color: #888;
+}
+

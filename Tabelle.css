@@ -1,0 +1,390 @@
+:root {
+    --accent-color: #e30613;
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
+    --highlight-color: #007a33;
+    --background-color: #f0f0f0;
+    --link-color: #007a33;
+    --footer-background-color: #1a1a1a;
+    --footer-text-color: #ffffff;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Stellt sicher, dass der Header über anderen Elementen bleibt */
+    background-color: var(--primary-color); /* Beibehaltung der Hintergrundfarbe */
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 1em;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Schatten für bessere Sichtbarkeit */
+    margin-bottom: 20px;
+}
+
+header img {
+    border: 100px;
+    width: 150px;
+    height: 150px; 
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li:first-child {
+    margin-left: 20px; /* Erhöht den Abstand links vom ersten Listenelement */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #888;
+    font-size: 14px;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a.active {
+    color: #000;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+}
+
+.nav-links a:hover {
+    font-weight: bold; /* Macht den Text fett */
+    text-decoration: underline; /* Fügt eine Unterstreichung hinzu */
+    color: red; /* Optional: Ändert die Farbe des Textes beim Hover-Effekt */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.bundesliga-logo {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.dazn-logo {
+    height: 20px;
+    width: auto;
+    margin-left: 10px;
+    object-fit: contain;
+}
+
+.profile img {
+    height: 30px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+a {
+    color: var(--link-color);
+}
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    height: 60px;
+}
+
+/* Body styling */
+/* Body styling */
+body {
+    background-color: var(--background-color); /* Heller Hintergrund */
+    color: var(--secondary-color); /* Schwarzer Text für gute Lesbarkeit */
+    font-family: 'Arial', sans-serif; /* Moderne und gut lesbare Schriftart */
+    line-height: 1.6; /* Bessere Lesbarkeit durch größeren Zeilenabstand */
+    margin: 0;
+    padding: 0;
+}
+
+/* Main content styling */
+main {
+    padding-top: 80px; /* Abstand, um den Header nicht zu überlappen */
+    padding-bottom: 40px; /* Abstand zum Footer */
+    margin: 0 auto;
+    width: 90%; /* Breite des Inhalts, zentriert */
+    max-width: 1200px; /* Maximalbreite für bessere Lesbarkeit */
+    background-color: #fff; /* Weißer Hintergrund für den Inhalt */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Leichter Schatten für visuelle Tiefe */
+    border-radius: 8px; /* Abgerundete Ecken */
+}
+
+/* Styling für Überschrift */
+h1 {
+    font-size: 2.5em; /* Große, aber elegante Schriftgröße */
+    color: #333; /* Dunkleres Grau für eine stilvolle Schriftfarbe */
+    text-align: center; /* Text zentrieren */
+    margin-bottom: 20px; /* Abstand zum nächsten Element */
+    position: relative; /* Für die Linie unter der Überschrift */
+    display: inline-block; /* Text bleibt inline, sodass die Linie nur den Text unterstreicht */
+}
+
+h1::after {
+    content: "";
+    width: 100%; /* Linie hat die gleiche Breite wie der Text */
+    height: 5px; /* Höhe der Linie */
+    background-color: #E30613; /* Bundesliga-Rot als Akzentfarbe */
+    display: block;
+    margin: 0 auto; /* Zentriert die Linie */
+    border-radius: 2px; /* Runde Kanten für einen eleganten Effekt */
+}
+
+
+
+
+
+
+/* Styling für die Tabelle */
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schatten für visuelle Tiefe */
+    margin-top: 20px;
+}
+
+/* Tabellenüberschrift */
+th {
+    background-color: #ffffff; /* Weißer Hintergrund */
+    color: #000000; /* Schwarzer Text */
+    text-transform: uppercase;
+    padding: 15px;
+    font-size: 16px;
+    border-bottom: 5px solid #e30613; /* Roter Strich unter der Überschrift */
+}
+
+/* Tabellenzeilen */
+td {
+    background-color: #ffffff; /* Weißer Hintergrund */
+    color: #000000; /* Schwarzer Text */
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid #e30613; /* Dünner roter Rand unter jeder Zelle */
+}
+
+/* Platznummer farbig hervorheben */
+td:first-child {
+    font-weight: bold;
+    color: #e30613; /* Bundesliga-Rot für Platznummer */
+}
+
+/* Punkte hervorheben */
+td:last-child {
+    font-weight: bold;
+    color: #007a33; /* Grüne Farbe für die Punkte */
+}
+
+/* Linien links neben den Tabellenplätzen für Plätze 1-7, 16-18 */
+tr:nth-child(-n+7) td.position-line, /* Plätze 1 bis 7 */
+tr:nth-child(16) td.position-line,   /* Platz 16 */
+tr:nth-child(n+17) td.position-line { /* Plätze 17 bis 18 */
+    border-left: 5px solid; 
+}
+
+tr:nth-child(-n+7) td.position-line { /* Plätze 1 bis 7 (Europäische Wettbewerbe) */
+    border-left-color: lightgreen; /* Champions League */
+}
+
+tr:nth-child(5) td.position-line,
+tr:nth-child(6) td.position-line { /* Plätze 5-6 (Europa League) */
+    border-left-color: darkgreen;
+}
+
+tr:nth-child(7) td.position-line { /* Platz 7 (Conference League) */
+    border-left-color: blue;
+}
+
+tr:nth-child(16) td.position-line { /* Platz 16 (Relegation) */
+    border-left-color: orange;
+}
+
+tr:nth-child(n+17) td.position-line { /* Plätze 17-18 (Abstieg) */
+    border-left-color: red;
+}
+
+/* Plätze 8 bis 15: Keine farbige Linie */
+tr:nth-child(n+8):nth-child(-n+15) td.position-line {
+    border-left: none; /* Keine Linie für diese Plätze */
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+    table {
+        font-size: 14px; /* Kleinere Schriftgröße für mobile Geräte */
+    }
+}
+
+.team-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    vertical-align: middle;
+    
+}
+
+#bundesliga-tabelle td {
+    padding: 10px; /* Abstand um die Zellen herum */
+    text-align: middle; /* Text linksbündig */
+    vertical-align: middle; /* Inhalt in der Mitte der Zelle ausrichten */
+    line-height: 30px; /* Einheitliche Höhe der Zellen */
+}
+
+#bundesliga-tabelle tr {
+    border-bottom: 1px solid red; /* Tabellenlinien */
+}
+
+
+.legende {
+    margin-top: 20px;
+}
+
+.legende h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.legende ul {
+    list-style-type: none; /* Entfernt die Standard-Aufzählungszeichen */
+    padding: 0;
+    margin: 0;
+}
+
+.legende li {
+    margin-bottom: 5px; /* Abstand zwischen den Listenelementen */
+}
+
+.legende li span {
+    font-weight: bold;
+}
+
+.legende li span.hellgruen {
+    color: lightgreen;
+}
+
+.legende li span.dunkelgruen {
+    color: darkgreen;
+}
+
+.legende li span.blau {
+    color: blue;
+}
+
+.legende li span.orange {
+    color: orange;
+}
+
+.legende li span.rot {
+    color: red;
+}
+
+
+
+
+
+
+
+
+footer {
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
+    padding: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-section h3,
+.footer-section h4,
+.footer-section p {
+    margin: 0;
+    padding: 0;
+    color: var(--footer-text-color);
+}
+
+.footer-section .apps img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.footer-section .partners img {
+    height: 30px;
+    margin-right: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #888;
+}
+
+.footer-links li {
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.social-media a {
+    color: #888;
+    margin-right: 10px;
+}
+
+.footer-settings {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.footer-settings select {
+    background-color: #333333;
+    color: #888;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.display-mode-label {
+    margin-bottom: 5px;
+    color: #888;
+    font-size: 14px;
+}
+
+.footer-copyright {
+    text-align: center;
+    margin-top: 20px;
+    color: #888;
+}
+

@@ -1,0 +1,568 @@
+:root {
+    --accent-color: #e30613;
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
+    --highlight-color: #007a33;
+    --background-color: #f0f0f0;
+    --link-color: #007a33;
+    --footer-background-color: #1a1a1a;
+    --footer-text-color: #ffffff;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Stellt sicher, dass der Header über anderen Elementen bleibt */
+    background-color: var(--primary-color); /* Beibehaltung der Hintergrundfarbe */
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 1em;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Schatten für bessere Sichtbarkeit */
+}
+
+header img {
+    border: 100px;
+    width: 150px;
+    height: 150px; 
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li:first-child {
+    margin-left: 20px; /* Erhöht den Abstand links vom ersten Listenelement */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #888;
+    font-size: 14px;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a.active {
+    color: #000;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+}
+
+.nav-links a:hover {
+    font-weight: bold; /* Macht den Text fett */
+    text-decoration: underline; /* Fügt eine Unterstreichung hinzu */
+    color: red; /* Optional: Ändert die Farbe des Textes beim Hover-Effekt */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.bundesliga-logo {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.dazn-logo {
+    height: 20px;
+    width: auto;
+    margin-left: 10px;
+    object-fit: contain;
+}
+
+.profile img {
+    height: 30px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+}
+
+a {
+    color: var(--link-color);
+}
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    height: 60px;
+}
+body.dark-mode {
+    --background-color: #1a1a1a; /* Hintergrundfarbe im Dunkelmodus */
+    --text-color: #ffffff; /* Textfarbe im Dunkelmodus */
+    --link-color: #1e90ff; /* Linkfarbe im Dunkelmodus */
+    --footer-background-color: #000000;
+    --footer-text-color: #888888;
+}
+
+body.dark-mode, 
+body.dark-mode p,
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4, 
+body.dark-mode h5, 
+body.dark-mode h6,
+body.dark-mode a {
+    color: var(--text-color);
+}
+
+body.dark-mode header {
+    background-color: #333333; /* Dunkler Hintergrund für die Navigationsleiste */
+    color: #ffffff; /* Weiße Schriftfarbe */
+}
+
+body.dark-mode .nav-links a {
+    color: #ffffff; /* Links in der Navigationsleiste auf Weiß setzen */
+}
+
+body.dark-mode .nav-links a:hover {
+    color: #ffcc00; /* Links beim Hover-Effekt auf eine gut lesbare Farbe ändern, z.B. Gelb */
+}
+
+body.dark-mode .logo span {
+    color: #ffcc00; /* Farbe des Textes "OFFIZIELLE WEBSITE ZUR VERFÜGUNG GESTELLT VON" auf Gelb ändern */
+}
+
+body.dark-mode .box-title {
+    color: #ffffff; /* Setzt die Schriftfarbe in den Boxen auf Weiß im Dark Mode */
+}
+
+body.dark-mode .scroll-box {
+    background-color: #333333; /* Passt die Hintergrundfarbe der Boxen im Dark Mode an */
+    border-color: #555555; /* Ändert die Rahmenfarbe der Boxen im Dark Mode */
+}
+
+body.dark-mode .partners-section {
+    background-color: #333333; /* Hintergrund der Partnerlogos im Dark Mode */
+    color: #ffffff; /* Schriftfarbe im Dark Mode */
+}
+
+body.dark-mode .partners-logos img {
+    filter: brightness(0.8); /* Verdunkelt die Logos im Dark Mode */
+}
+
+body.dark-mode .partners-section h2 {
+    color: #ffffff; /* Schriftfarbe der Überschrift im Dark Mode */
+}
+
+main {
+    padding-top: 60px; /* Platz für den fixierten Header schaffen, abhängig von der Höhe des Headers */
+    margin-bottom: 80px; /* Abstand nach unten zum Footer */
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    height: 60px;
+}
+
+.profile a {
+    text-decoration: none;
+}
+
+main { 
+    display: grid; 
+    grid-template-columns: auto;
+}
+
+footer {
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
+    padding: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-section h3,
+.footer-section h4,
+.footer-section p {
+    margin: 0;
+    padding: 0;
+    color: var(--footer-text-color);
+}
+
+.footer-section .apps img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.footer-section .partners img {
+    height: 30px;
+    margin-right: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #888;
+}
+
+.footer-links li {
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.social-media a {
+    color: #888;
+    margin-right: 10px;
+}
+
+.footer-settings {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.footer-settings select {
+    background-color: #333333;
+    color: #888;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.display-mode-label {
+    margin-bottom: 5px;
+    color: #888;
+    font-size: 14px;
+}
+
+.footer-copyright {
+    text-align: center;
+    margin-top: 20px;
+    color: #888;
+}
+
+
+
+
+/* Standardmodus (Heller Modus) */
+body {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+/* Dunkler Modus */
+body.dark-mode {
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+/* Passe auch andere Bereiche an */
+header.dark-mode, footer.dark-mode {
+    background-color: #222222;
+}
+
+header.light-mode, footer.light-mode {
+    background-color: #f4f4f4;
+}
+
+.bvb {
+    position: relative;
+    color: black;
+    padding: 20px;
+    border-bottom: 5px solid #FFD700;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* Video hinter den Text legen */
+    object-fit: cover; /* Video so skalieren, dass es den ganzen Hintergrund ausfüllt */
+}
+
+.bvb-inhalt {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Zentriert den Inhalt */
+    height: 300px; /* Höhe des Blocks */
+}
+
+.bvb-text {
+    z-index: 1; /* Sicherstellen, dass der Text über dem Video liegt */
+    max-width: 800px; /* Maximale Breite des Textbereichs */
+    color: white; /* Optional: Textfarbe anpassen, damit er gut lesbar ist */
+}
+
+
+
+.bvb.dark-mode {
+    background-color: #FFD700; /* Hellgelb für Dunkelmodus */
+    color: #222222; /* Dunkleres Schwarz für besseren Kontrast */
+}
+
+.bvb h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.bvb.dark-mode h1 {
+    color: #FFFFFF; /* Weißer Text für Dark Mode */
+}
+
+.bvb p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.bvb.dark-mode p {
+    color: #FFFFFF; /* Weißer Text für Dark Mode */
+}
+
+.ultra-bild {
+    width: 250px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+/* Erfolge-Dortmund */
+.Ultras-Dortmund {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.Ultras-Dortmund.dark-mode {
+    background-color: #444444; /* Dunkler Hintergrund im Dark Mode */
+    color: #FFD700; /* Gelber Text im Dark Mode */
+}
+
+.Ultras-Dortmund h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 5px;
+}
+
+.Ultras-Dortmund.dark-mode h2 {
+    color: #FFD700; /* Gelber Titeltext im Dark Mode */
+}
+
+.Ultras-Dortmund ul li {
+    font-size: 18px;
+    margin-bottom: 8px;
+    padding-left: 80px; /* Platz für das Bild */
+    position: relative;
+    list-style: none; 
+    padding-left: 140px; /* Platz für größere Bilder lassen */
+    height: 120px; /* Höhe der Listenelemente anpassen, um die Höhe der Bilder zu berücksichtigen */
+    margin-bottom: 15px;
+}
+
+.Ultras-Dortmund ul li.Unity {
+    background-image: url('https://th.bing.com/th/id/R.cab681be2508752eca7ae6bcfb1e7fbb?rik=V%2b1JtzdCeNSsIg&pid=ImgRaw&r=0&sres=1&sresct=1');
+    background-size: 120px 120px; /* Bild in der Höhe vergrößern */
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.Ultras-Dortmund ul li.Desperados {
+    background-image: url('https://th.bing.com/th/id/R.d97ef8a3e986595ef09fb9e1714e9a80?rik=%2f5femtVkQ9iaew&riu=http%3a%2f%2ffile1.npage.de%2f002980%2f68%2fbilder%2fdes.jpg&ehk=yn6EsvSFqgeLiCWOMCxyZMgLdaeWDuHhxptWbdLZtqM%3d&risl=&pid=ImgRaw&r=0');
+    background-size: 120px 120px; /* Bild in der Höhe vergrößern */
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.Ultras-Dortmund ul li.Jubos {
+    background-image: url('https://www.fussballmafia.de/cms/images/news/Jubos_Dortmund.jpg');
+    background-size: 120px 120px; /* Bild in der Höhe vergrößern */
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+
+
+/* Stadium-Dortmund */
+.Choreo-Dortmund {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.Choreo-Dortmund.dark-mode {
+    background-color: #444444;
+    color: #FFD700;
+}
+
+.Choreo-Dortmund h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 5px;
+}
+
+.Choreo-Dortmund.dark-mode h2 {
+    color: #FFD700;
+}
+
+.Choreo-Dortmund .stadium-info p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.Choreo-Dortmund img {
+    width: 100%;
+    max-width: 600px;
+    height: 450px;
+    border-radius: 8px;
+    margin-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Fans */
+.Fans {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.Fans.dark-mode {
+    background-color: #444444;
+    color: #FFD700;
+}
+
+.Fans h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 5px;
+}
+
+.Fans.dark-mode h2 {
+    color: #FFD700;
+}
+.Fans .image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center; /* Zentriert den gesamten Inhalt horizontal */
+}
+
+.Fans .image-grid .image-item {
+    flex-basis: calc(33.33% - 20px); /* Drei Bilder in der ersten Reihe */
+    display: flex;
+    flex-direction: column; /* Bilder unter dem Text */
+    align-items: center; /* Zentriert die Bilder unter dem Text */
+    text-align: center;
+}
+
+.Fans .image-grid .image-item:nth-child(4), 
+.Fans .image-grid .image-item:nth-child(5) {
+    flex-basis: calc(50% - 20px); /* Zwei Bilder in der zweiten Reihe */
+}
+
+.Fans .image-grid img {
+    width: 100px; /* Kleinere Bildgröße */
+    height: auto;
+}
+
+.container {
+    display: block; /* Behält die Struktur */
+    padding: 20px;
+}
+
+.title {
+    text-align: left; /* Überschrift linksbündig */
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Abstand zwischen den Karten */
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Jede Karte nimmt 30% der Breite ein */
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.card video {
+    width: 100%;
+    height: 350px; /* Festgelegte Höhe für alle Videos */
+    object-fit: cover; /* Stellt sicher, dass das Video im festgelegten Bereich gut aussieht */
+    border-radius: 10px 10px 0 0; /* Abgerundete Ecken oben */
+}
+
+
+.card h2 {
+    font-size: 1.5em;
+    margin: 15px;
+}
+
+.card p {
+    font-size: 1em;
+    margin: 15px;
+    color: #555;
+}
+
+.card span {
+    font-size: 0.9em;
+    color: gray;
+    display: block;
+    margin: 15px;
+}
+

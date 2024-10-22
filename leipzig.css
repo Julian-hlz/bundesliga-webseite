@@ -1,0 +1,135 @@
+.leipzig {
+    background-color: #E30613; 
+    color: #FFFFFF; 
+    padding: 20px; 
+    border-bottom: 5px solid #005EA8; /* Blau für die untere Umrandung */
+}
+
+.leipzig h1 {
+    font-size: 36px; 
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.leipzig p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.leipzig-inhalt {
+    display: flex;
+    align-items: center;
+}
+
+.leipzig-bild {
+    width: 150px; 
+    height: auto;
+    margin-right: 20px; 
+}
+
+.leipzig-text {
+    max-width: 800px; 
+}
+
+.Erfolge-leipzig {
+    background-color: #FFFFFF; 
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.Erfolge-leipzig h2 {
+    font-size: 24px;
+    color: #E30613; 
+    margin-bottom: 10px;
+    border-bottom: 2px solid #005EA8; /* Blau für die Unterstreichung */
+    padding-bottom: 5px;
+}
+
+.Erfolge-leipzig ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.Erfolge-leipzig ul li {
+    font-size: 18px;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.Erfolge-leipzig ul li:before {
+    content: "•";
+    color: #E30613; 
+    font-size: 24px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.Stadium-leipzig {
+    background-color: #FFFFFF; 
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.Stadium-leipzig h2 {
+    font-size: 24px;
+    color: #E30613; 
+    margin-bottom: 10px;
+    border-bottom: 2px solid #005EA8; /* Blau für die Unterstreichung */
+    padding-bottom: 5px;
+}
+
+.Stadium-leipzig .stadium-info p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.Stadium-leipzig img {
+    width: 100%; 
+    max-width: 600px; 
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.Unser-Standort {
+    background-color: #FFFFFF; 
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.Unser-Standort h2 {
+    font-size: 24px;
+    color: #E30613; 
+    margin-bottom: 10px;
+    border-bottom: 2px solid #005EA8; /* Blau für die Unterstreichung */
+    padding-bottom: 5px;
+}
+
+.map-container {
+    max-width: 600px; 
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.map-iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+    border-radius: 5px; 
+}

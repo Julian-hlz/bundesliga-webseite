@@ -1,0 +1,654 @@
+:root {
+    --accent-color: #e30613;
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
+    --highlight-color: #007a33;
+    --background-color: #f0f0f0;
+    --link-color: #007a33;
+    --footer-background-color: #1a1a1a;
+    --footer-text-color: #ffffff;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Stellt sicher, dass der Header über anderen Elementen bleibt */
+    background-color: var(--primary-color); /* Beibehaltung der Hintergrundfarbe */
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 1em;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Schatten für bessere Sichtbarkeit */
+}
+
+header img {
+    border: 100px;
+    width: 150px;
+    height: 150px; 
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li:first-child {
+    margin-left: 20px; /* Erhöht den Abstand links vom ersten Listenelement */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #888;
+    font-size: 14px;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a.active {
+    color: #000;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+}
+
+.nav-links a:hover {
+    font-weight: bold; /* Macht den Text fett */
+    text-decoration: underline; /* Fügt eine Unterstreichung hinzu */
+    color: red; /* Optional: Ändert die Farbe des Textes beim Hover-Effekt */
+}
+.logo {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.bundesliga-logo {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.dazn-logo {
+    height: 20px;
+    width: auto;
+    margin-left: 10px;
+    object-fit: contain;
+}
+
+.profile img {
+    height: 30px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+a {
+    color: var(--link-color);
+}
+
+.bundesliga-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bundesliga-intro .bundesliga-logo {
+    height: 130px;  /* Erhöhe die Höhe des Logos */
+    width: auto;
+    margin: 7px 0;  /* Füge etwas Abstand zum Text und Video hinzu */
+    object-fit: contain;
+}
+
+main {
+    padding-top: 60px; /* Platz für den fixierten Header schaffen, abhängig von der Höhe des Headers */
+    margin-bottom: 80px; /* Abstand nach unten zum Footer */
+    display: grid; 
+    grid-template-columns: auto;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    height: 60px;
+}
+
+.profile a {
+    text-decoration: none;
+}
+
+.scroll-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.scroll-container {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr); /* 9 Spalten */
+    gap: 1em;
+    padding: 1em 0;
+    background-color: var(--background-color);
+    max-width: 100%;
+}
+
+.scroll-box {
+    flex: 0 0 auto;
+    width: 100%; /* Passt die Breite an die Spalte an */
+    height: 150px; /* Höhe der Box */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--secondary-color);
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+/* Team-Spezifische Hover-Effekte */
+.scroll-box.dortmund:hover {
+    background-color: #FFDD00; /* Gelb */
+}
+
+.scroll-box.bayern:hover {
+    background-color: #DC052D; /* Rot */
+}
+
+.scroll-box.stuttgart:hover {
+    background-color: #E30613; /* Rot */
+}
+
+.scroll-box.freiburg:hover {
+    background-color:#DC052D; /* Schwarz */
+}
+
+.scroll-box.frankfurt:hover {
+    background-color: #E10000; /* Rot */
+}
+
+.scroll-box.leverkusen:hover {
+    background-color: #E32219; /* Rot */
+}
+
+.scroll-box.heidenheim:hover {
+    background-color: #005CA9; /* Blau */
+}
+
+.scroll-box.bremen:hover {
+    background-color: #1A8247; /* Grün */
+}
+
+.scroll-box.union:hover {
+    background-color: #A2001D; /* Rot */
+}
+
+.scroll-box.augsburg:hover {
+    background-color: #A3001D; /* Rot */
+}
+
+.scroll-box.wolfsburg:hover {
+    background-color: #48A53D; /* Grün */
+}
+
+.scroll-box.gladbach:hover {
+    background-color: #000000; /* Schwarz */
+}
+
+.scroll-box.mainz:hover {
+    background-color:rgb(249, 35, 35); /* Rot */
+}
+
+.scroll-box.bochum:hover {
+    background-color: #0C48A3; /* Blau */
+}
+
+.scroll-box.pauli:hover {
+    background-color: #4F2E21; /* Braun */
+}
+
+.scroll-box.kiel:hover {
+    background-color: #003876; /* Blau */
+}
+
+.scroll-box.hoffenheim:hover {
+    background-color: #005CAA; /* Blau */
+}
+
+.scroll-box.leipzig:hover {
+    background-color: #DD0022; /* Rot */
+}
+.scroll-box:hover {
+    background-color: var(--highlight-color);
+}
+
+.box-title {
+    font-weight: bold;
+    font-size: 0.9em;
+    color: var(--secondary-color);
+}
+
+.box-image {
+    width: 80%; /* Breite des Bildes im Verhältnis zur Box */
+    height: auto;
+    max-height: 80px; /* Maximale Höhe des Bildes */
+    object-fit: contain; /* Bild wird skaliert, um in die Box zu passen */
+    margin-bottom: 0.5em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    display: block; /* Behält die Struktur */
+    padding: 20px;
+}
+
+.title {
+    text-align: left; /* Überschrift linksbündig */
+    margin-bottom: 20px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Abstand zwischen den Karten */
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Jede Karte nimmt 30% der Breite ein */
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.card video {
+    width: 100%;
+    height: 350px; /* Festgelegte Höhe für alle Videos */
+    object-fit: cover; /* Stellt sicher, dass das Video im festgelegten Bereich gut aussieht */
+    border-radius: 10px 10px 0 0; /* Abgerundete Ecken oben */
+}
+
+
+.card h2 {
+    font-size: 1.5em;
+    margin: 15px;
+}
+
+.card p {
+    font-size: 1em;
+    margin: 15px;
+    color: #555;
+}
+
+.card span {
+    font-size: 0.9em;
+    color: gray;
+    display: block;
+    margin: 15px;
+}
+
+.partner {
+    padding: 20px;
+    background-color: var(--primary-color);
+    width: auto; /* Passt die Breite an den Inhalt an */
+    display: inline-block; /* Block endet nach dem letzten Partner */
+}
+
+.partner-logos {
+    display: flex;
+    justify-content: space-between; /* Stellt sicher, dass die Logos gleichmäßig verteilt sind */
+    align-items: center;
+    flex-wrap: nowrap; /* Stellt sicher, dass alle Logos in einer Reihe bleiben */
+    gap: 123px; /* Erhöht den Abstand zwischen den Logos */
+}
+
+.partner-logos img {
+    width: 100px; /* Alle Logos haben dieselbe Breite */
+    height: auto; /* Höhe passt sich proportional zur Breite an */
+    object-fit: contain; /* Stellt sicher, dass die Logos korrekt skaliert werden */
+}
+
+
+.partner-logos img:hover {
+    transform: scale(1.1);
+}
+
+.partner h2 {
+    font-size: 18px;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+
+footer {
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
+    padding: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.footer-section h3,
+.footer-section h4,
+.footer-section p {
+    margin: 0;
+    padding: 0;
+    color: var(--footer-text-color);
+}
+
+.footer-section .apps img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.footer-section .partners img {
+    height: 30px;
+    margin-right: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #888;
+}
+
+.footer-links li {
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.social-media a {
+    color: #888;
+    margin-right: 10px;
+}
+
+.footer-settings {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.footer-settings select {
+    background-color: #333333;
+    color: #888;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.display-mode-label {
+    margin-bottom: 5px;
+    color: #888;
+    font-size: 14px;
+}
+
+.footer-copyright {
+    text-align: center;
+    margin-top: 20px;
+    color: #888;
+}
+
+.cookie-banner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFFFFF;
+    width: 800px;
+    padding: 1em;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: #333;
+    border-radius: 8px;
+    z-index: 1000; /* Stellt sicher, dass es im Vordergrund bleibt */
+}
+
+.cookie-banner h2 {
+    font-size: 16px;
+    margin-top: 0;
+    color: #333;
+}
+
+.cookie-banner p {
+    font-size: 14px;
+    margin-bottom: 1em;
+    color: #333;
+}
+
+.cookie-banner a {
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.cookie-banner button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 0.5em 1em;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.cookie-banner .decline {
+    background-color: #0056b3;
+}
+
+.cookie-banner .settings {
+    display: block;
+    margin-top: 10px;
+    text-align: right;
+    font-size: 14px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Allgemeine Anpassungen für den Dark Mode */
+body.dark-mode {
+    background-color: #121212; /* Hintergrundfarbe der gesamten Seite */
+    color: #ffffff; /* Weiße Textfarbe */
+}
+
+/* Navigationsleiste */
+body.dark-mode header {
+    background-color: #1f1f1f; /* Dunkleres Grau für den Header */
+    color: #ffffff; /* Weiße Textfarbe */
+}
+
+body.dark-mode .nav-links a {
+    color: #ffffff; /* Links im Dark Mode weiß */
+}
+
+body.dark-mode .nav-links a:hover {
+    color: #ff8c00; /* Optional: Farbe für Hover-Effekte */
+}
+
+/* Partnerlogos und Partnerbereich */
+body.dark-mode .partners-section {
+    background-color: #1f1f1f; /* Dunkler Hintergrund für den Partnerbereich */
+    color: #ffffff; /* Weiße Textfarbe */
+}
+
+/* Dunkler Hintergrund für den Bereich der Fußballvereine */
+body.dark-mode .Fußballvereine {
+    background-color: #1f1f1f; /* Setze den Hintergrund der Sektion auf dunkel */
+}
+
+/* Die Boxen für die Fußballvereine ebenfalls dunkel */
+body.dark-mode .scroll-box {
+    background-color: #2c2c2c; /* Dunkler Hintergrund für die Boxen */
+    border-color: #3a3a3a; /* Optional: leicht dunklerer Rahmen */
+    color: #ffffff; /* Weiße Schrift in den Boxen */
+}
+
+
+/* Überschriften und Texte in den Boxen */
+body.dark-mode .box-title,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #ffffff; /* Weiße Schriftfarbe für alle Überschriften und Titel */
+}
+
+/* Footer */
+body.dark-mode footer {
+    background-color: #1f1f1f; /* Dunkler Hintergrund im Footer */
+    color: #ffffff; /* Weiße Textfarbe im Footer */
+}
+
+/* Karten (z.B. Videos und Titelgewinner) */
+body.dark-mode .card {
+    background-color: #1f1f1f; /* Dunkler Hintergrund für die Karten */
+    color: #ffffff; /* Weiße Textfarbe für Karteninhalte */
+}
+
+/* Video-Hintergründe in den Karten */
+body.dark-mode .card video {
+    background-color: #2c2c2c; /* Dunkler Hintergrund für die Videos */
+}
+
+/* Cookie-Banner im Dark Mode */
+body.dark-mode .cookie-banner {
+    background-color: #2c2c2c; /* Dunkler Hintergrund für das Cookie-Banner */
+    color: #ffffff; /* Weiße Textfarbe */
+}
+
+/* Zusätzliche Textbereiche */
+body.dark-mode p, 
+body.dark-mode a, 
+body.dark-mode span {
+    color: #ffffff; /* Setzt alle Links, Absätze und Span-Elemente auf Weiß */
+}
+
+/* Media Queries für mobile Geräte */
+@media only screen and (max-width: 768px) {
+    header {
+        flex-direction: column; /* Verhindert, dass das Header-Layout zerbricht */
+        height: auto; /* Ermöglicht flexibles Header-Layout auf kleineren Bildschirmen */
+    }
+
+    .nav-links {
+        flex-direction: column; /* Links werden untereinander statt nebeneinander angezeigt */
+        align-items: center;
+    }
+
+    .profile {
+        margin-top: 10px; /* Abstand nach oben für Profilbild */
+    }
+
+    .bundesliga-intro video {
+        width: 100%; /* Das Video nimmt die gesamte Breite des Containers ein */
+        height: auto; /* Höhe wird proportional zur Breite angepasst */
+    }
+
+    .scroll-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 Spalten für Fußballvereine */
+    }
+
+    .scroll-box {
+        height: 120px; /* Reduziert die Höhe der Boxen auf mobilen Geräten */
+    }
+
+    .card-container {
+        flex-direction: column; /* Karten werden untereinander statt nebeneinander angezeigt */
+        width: 100%; /* Karten nehmen die volle Breite ein */
+    }
+
+    .card {
+        width: 100%; /* Karten passen sich der vollen Breite des Containers an */
+    }
+
+    footer {
+        flex-direction: column; /* Footer-Layout wird vertikal, um Platz zu sparen */
+        align-items: center;
+        text-align: center; /* Zentriert den Text im Footer */
+    }
+
+    .footer-section {
+        margin-bottom: 20px; /* Fügt Abstand zwischen den Footer-Sektionen hinzu */
+    }
+
+    .partner-logos {
+        flex-direction: column; /* Logos werden untereinander angezeigt */
+        gap: 20px; /* Vergrößert den Abstand zwischen den Logos */
+    }
+
+    .cookie-banner {
+        width: 90%; /* Verkleinert das Cookie-Banner auf mobilen Geräten */
+    }
+}
+
+/* Für sehr kleine Geräte (max-width: 480px) */
+@media only screen and (max-width: 480px) {
+    .scroll-container {
+        grid-template-columns: repeat(1, 1fr); /* Eine Spalte für Fußballvereine */
+    }
+
+    .main-nav {
+        flex-direction: column; /* Navigation in eine Spalte umstellen */
+    }
+
+    .bundesliga-logo, .dazn-logo {
+        width: 40px; /* Verkleinert die Logos für mobile Geräte */
+        height: auto;
+    }
+}

@@ -1,0 +1,168 @@
+:root {
+    --accent-color: #e30613;
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
+    --highlight-color: #007a33;
+    --background-color: #f0f0f0;
+    --link-color: #007a33;
+    --footer-background-color: #1a1a1a;
+    --footer-text-color: #ffffff;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Stellt sicher, dass der Header über anderen Elementen bleibt */
+    background-color: var(--primary-color); /* Beibehaltung der Hintergrundfarbe */
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 1em;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Schatten für bessere Sichtbarkeit */
+}
+
+header img {
+    border: 100px;
+    width: 150px;
+    height: 150px; 
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li:first-child {
+    margin-left: 20px; /* Erhöht den Abstand links vom ersten Listenelement */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #888;
+    font-size: 14px;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a.active {
+    color: #000;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+}
+
+.nav-links a:hover {
+    font-weight: bold; /* Macht den Text fett */
+    text-decoration: underline; /* Fügt eine Unterstreichung hinzu */
+    color: red; /* Optional: Ändert die Farbe des Textes beim Hover-Effekt */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.bundesliga-logo {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.dazn-logo {
+    height: 20px;
+    width: auto;
+    margin-left: 10px;
+    object-fit: contain;
+}
+
+.profile img {
+    height: 30px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+a {
+    color: var(--link-color);
+}
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    height: 60px;
+}
+
+
+* {margin:0; padding: 0;}
+
+body {background: linear-gradient(180deg, rgba(23, 38, 51, 1) 0%, rgba(29, 57, 80, 1) 70%, rgba(23, 38, 51, 1) 100%); font-size: 16px; width: 100vw; height: 100vh; font-family: "Roboto", Arial; display: flex; align-items: center; justify-content: center;}
+
+hr { border: 0; height: 0; border-top: 1px solid rgba(255, 255, 255, 0.05);margin: 1em 0;}
+
+.wrapper {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border: 5px solid rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.5);
+    width: 80%;
+    margin-top: 180px; 
+    display: flex; /* Flexbox-Layout aktiviert */
+    gap: 20px; /* Abstand zwischen Info und Kontaktformular */
+}
+
+.info {
+    flex: 1; /* Info-Abschnitt nimmt 1 Teil des verfügbaren Platzes ein */
+    padding-right: 20px;
+}
+
+.orange-line {
+    width: 2px; /* Dicke des Trennstrichs */
+    background-color: red; /* Farbe des Trennstrichs */
+    height: auto; /* Höhe anpassen */
+}
+
+
+.container {
+    display: block; /* Sicherstellen, dass alles untereinander erscheint */
+    width: 100%;
+    margin-bottom: 20px; /* Abstand zum Footer hinzufügen */
+}
+
+.container a {color: #fff;}
+.container h2 { font-weight: 400; font-size: 1.6em; color: #36658f; background: #fff; padding: 5px; text-align: center; margin: 0 5px; border-radius: 2px; }
+.container h3 { font-weight: 500; font-size: 1.1em; color: #fff;   margin: 30px 0 10px 0; letter-spacing: 2px;}
+.container p { font-weight: 300; font-size: 1em; color: #fff; padding: 3px; margin: 1px 0;}
+.container p:hover {background: rgba(23, 38, 51, 1);}
+
+
+
+.row {display: flex; flex-direction: column; margin: 10px; }
+
+.contactform input, label { transition: .2s all ease-in;}
+.contactform input, label, select, textarea { outline: none;}
+.contactform select {padding: 5px; margin: 2px 0 15px 0;}
+.contactform textarea { width: 100%; height: 150px; padding: 5px;}
+
+.contactform input[type="submit"] {width: 100%; height:auto; border:none; background: #006ED5; margin: 10px 5px; border-radius: 3px; padding: 8px; color: #fff; }
+
+.contactform input[type="submit"]:hover { background: #004688; cursor: pointer;}
+.contactform input[type="submit"]:focus { border: none;}
+
+.contactform label { font-size: .9em; color: #fff; padding: 0 0 5px 0;}
+.contactform input { border: none; padding: 10px 5px 2px 2px; border-bottom: 1px solid #D4D4D4; font-size: 1em; font-weight: 300; color: #fff; background: none; }
+
+.contactform input:focus { border-bottom: 1px solid #FF6E10;}
+.contactform input:focus + label { color: #FF6E10;}
+
+

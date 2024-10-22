@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>1. Bundesliga</title>
+        <meta name="description" content="Präsentation der 1. Fußball Bundesliga">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="https://th.bing.com/th/id/R.4adf3b2d620916007c36396e67e2cea0?rik=nraR35bWXQMNCg&pid=ImgRaw&r=0">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://th.bing.com/th/id/OIP.1jAm4h37l5zyqBA4ThCUzgHaHa?w=188&h=188&c=7&r=0&o=5&dpr=1.5&pid=1.7">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://th.bing.com/th/id/OIP.1jAm4h37l5zyqBA4ThCUzgHaHa?w=188&h=188&c=7&r=0&o=5&dpr=1.5&pid=1.7">
+    
+
+        <link type="text/css" rel="stylesheet" href="Tabelle.css">
+    </head>
+    <body>
+        <header>
+            <nav class="main-nav">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="https://th.bing.com/th/id/OIP.P_KA1h9Nxfx0-LVD-acdeAAAAA?rs=1&pid=ImgDetMain" alt="Bundesliga Logo" class="bundesliga-logo">
+                    </a>
+                    <span>OFFIZIELLE WEBSITE ZUR VERFÜGUNG GESTELLT VON</span>
+                    <img src="https://th.bing.com/th/id/R.cc2791914ba4c17c9863ef78ae7f3e3c?rik=%2fvvX%2bT4ZqgiD4w&riu=http%3a%2f%2fs3-eu-west-1.amazonaws.com%2fdazn-marketing%2fapp%2fuploads%2f2016%2f08%2f09120714%2fDAZN-Logo-RGB_WonB.png&ehk=%2f%2fT7Upyzm2ai20bJdhuu7TFVA6fOIctrMWHpbBICf0A%3d&risl=&pid=ImgRaw&r=0" alt="DAZN Logo" class="dazn-logo">
+                </div>
+                    <ul class="nav-links">
+                        <li><a href="../Tabelle.html">Tabelle</a></li>
+                        <li><a href="Fans.html">Fans</a></li>
+                    </ul>
+                    <div class="profile">
+                        <a href="Anmeldefomular.html"><img src="https://th.bing.com/th/id/OIP.U1FcsQimhEwceLMAYGs_TQHaHa?w=181&h=181&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Profil"></a>
+                    </div>
+                </ul>
+                </div>
+            </nav>
+        </header>      
+        <main>
+            <h1>Bundesliga Tabelle 2024/25</h1>
+    <table id="bundesliga-tabelle">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Platz</th>
+                <th>Verein</th>
+                <th>Spiele</th>
+                <th>S</th>
+                <th>U</th>
+                <th>N</th>
+                <th>Tore</th>
+                <th>Diff</th>
+                <th>Punkte</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Daten werden hier eingefügt -->
+        </tbody>
+    </table>
+    <script>
+       document.addEventListener('DOMContentLoaded', () => {
+    // Mapping von Teamnamen zu den richtigen Logo-Dateinamen
+    const teamLogos = {
+        "FC Bayern München": "Bilder&Videos/Logo-Bayern.svg",
+        "Borussia Dortmund": "Bilder&Videos/Logo-Dortmund.svg",
+        "RB Leipzig": "Bilder&Videos/Logo-Leipzig.svg",
+        "Bayer Leverkusen": "Bilder&Videos/Logo-Leverkusen.svg",
+        "VfL Wolfsburg": "Bilder&Videos/Logo-Wolfsburg.svg",
+        "1. FC Union Berlin": "Bilder&Videos/Logo-Union.svg",
+        "Eintracht Frankfurt": "Bilder&Videos/Logo-Frankfurt.svg",
+        "SC Freiburg": "Bilder&Videos/Logo-Freiburg.svg",
+        "Borussia Mönchengladbach": "Bilder&Videos/Logo-Gladbach.svg",
+        "1. FSV Mainz 05": "Bilder&Videos/Logo-Mainz.svg",
+        "Werder Bremen": "Bilder&Videos/Logo-Bremen.svg",
+        "VfB Stuttgart": "Bilder&Videos/Logo-Stuttgart.svg",
+        "TSG 1899 Hoffenheim": "Bilder&Videos/Logo-Hoffenheim.svg",
+        "FC Augsburg": "Bilder&Videos/Logo-Augsburg.svg",
+        "Holstein Kiel": "Bilder&Videos/Logo-Kiel.svg",
+        "VfL Bochum": "Bilder&Videos/Logo-Bochum.svg",
+        "FC St. Pauli": "Bilder&Videos/Logo-Pauli.svg",
+        "1. FC Heidenheim 1846": "Bilder&Videos/Logo-Heidenheim.svg"
+    };
+
+
+    async function fetchBundesligaTabelle() {
+        try {
+            const response = await fetch('https://corsproxy.io/?https://www.openligadb.de/api/getbltable/bl1/2024');
+            if (!response.ok) {
+                throw new Error('Netzwerkantwort war nicht in Ordnung.');
+            }
+            const data = await response.json();
+
+            const tableBody = document.querySelector('#bundesliga-tabelle tbody');
+            tableBody.innerHTML = '';  // Tabelle zuerst leeren
+
+            data.forEach((team, index) => {
+                const row = document.createElement('tr');
+                
+                // Finde das passende Logo oder nutze ein Standard-Logo, falls keins vorhanden ist
+                const teamLogo = teamLogos[team.teamName] || 'Bilder&Videos/Logo-Default.svg';
+                
+                // Tabelle mit Logos und farbiger Linie dynamisch erstellen
+                row.innerHTML = `
+                    <td class="position-line"></td> <!-- Für die farbige Linie -->
+                    <td>${index + 1}</td>
+                    <td><img src="${teamLogo}" alt="${team.teamName} Logo" class="team-logo"> ${team.teamName}</td>
+                    <td>${team.matches}</td>
+                    <td>${team.won}</td>
+                    <td>${team.draw}</td>
+                    <td>${team.lost}</td>
+                    <td>${team.goals}:${team.opponentGoals}</td>
+                    <td>${team.goalDiff}</td>
+                    <td>${team.points}</td>
+                `;
+
+                // Farbzuweisung basierend auf dem Tabellenplatz
+                const positionLine = row.querySelector('.position-line');
+                if (index + 1 <= 4) {
+                    positionLine.style.borderLeft = '5px solid lightgreen';  // UEFA Champions League (Platz 1-4)
+                } else if (index + 1 === 5 || index + 1 === 6) {
+                    positionLine.style.borderLeft = '5px solid darkgreen';  // UEFA Europa League (Platz 5-6)
+                } else if (index + 1 === 7) {
+                    positionLine.style.borderLeft = '5px solid blue';  // UEFA Conference League (Platz 7)
+                } else if (index + 1 === 16) {
+                    positionLine.style.borderLeft = '5px solid orange';  // Relegation (Platz 16)
+                } else if (index + 1 >= 17) {
+                    positionLine.style.borderLeft = '5px solid red';  // Abstieg (Platz 17-18)
+                }
+
+                tableBody.appendChild(row);
+            });
+        } catch (error) {
+            console.error('Fehler beim Abrufen der Tabelle:', error);
+            document.querySelector('#bundesliga-tabelle tbody').innerHTML = '<tr><td colspan="9">Fehler beim Laden der Tabelle</td></tr>';
+        }
+    }
+
+    fetchBundesligaTabelle();
+});
+
+     </script>
+
+<div class="legende">
+    <h3>Qualifikation / Relegation:</h3>
+    <ul>
+        <li><span class="hellgruen">Hellgrün</span>: UEFA Champions League</li>
+        <li><span class="dunkelgruen">Dunkelgrün</span>: UEFA Europa League</li>
+        <li><span class="blau">Blau</span>: UEFA Europa Conference League</li>
+        <li><span class="orange">Orange</span>: Relegation</li>
+        <li><span class="rot">Rot</span>: Abstieg</li>
+    </ul>
+</div>
+
+
+        </main>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="https://th.bing.com/th/id/OIP.P_KA1h9Nxfx0-LVD-acdeAAAAA?rs=1&pid=ImgDetMain" alt="Bundesliga Logo" class="bundesliga-logo">
+                    <p>Fußball, wie er sein soll</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Powered by</h4>
+                    <div class="partners">
+                        <img src="Bilder&Videos/Logo_AWS.png" alt="Logo AWS">
+                        <img src="Bilder&Videos/Logo_Derbystar.png" alt="Logo Derbystar">
+                        <img src="Bilder&Videos/Logo_EA.png" alt="Logo EA Sports">
+                        <img src="Bilder&Videos/Logo_Milka .png" alt="Logo Milka">
+                        <img src="Bilder&Videos/Logo_sorare.png" alt="Logo Sorare">
+                        <img src="Bilder&Videos/Logo_Topps.png" alt="Logo Topps">
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <ul class="footer-links">
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="Nutzungsbedingungen.html">Nutzungsbedingungen</a></li>
+                        <li><a href="Kontaktfomular.html">Kontaktfomular</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-bottom">
+                <div class="social-media">
+                    <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com"><i class="fab fa-youtube"></i></a>
+                    <a href="https://linkedin.com"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+                    <a href="https://tiktok.com"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <div class="footer-settings">
+    <label for="display-mode" class="display-mode-label"><b>Anzeigemodus</b></label>
+    <select id="display-mode">
+        <option value="auto">Auto</option>
+        <option value="light">Hell</option>
+        <option value="dark">Dunkel</option>
+    </select>
+    
+    </div>
+            </div>
+            <div class="footer-copyright">
+                © 2024 1. Fußballbundesliga
+            </div>
+        </footer>
+    </body>
+</html>
